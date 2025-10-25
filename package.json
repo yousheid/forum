@@ -1,0 +1,28 @@
+{
+  "name": "forumid",
+  "version": "1.0.0",
+  "description": "Portal berita terkini dan terpercaya",
+  "main": "index.html",
+  "scripts": {
+    "build": "node scripts/generate-static-pages.js",
+    "serve": "python -m http.server 8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "berita",
+    "portal",
+    "teknologi",
+    "keuangan",
+    "fotografi",
+    "produktivitas"
+  ],
+  "author": "FORUMID",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
