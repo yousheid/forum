@@ -1,0 +1,2227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal berita modern dengan berita terkini dan terpercaya">
+    <meta name="keywords" content="berita, terkini, terpercaya, indonesia">
+    <meta name="author" content="Portal Berita Modern">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portal Berita Modern">
+    <meta property="og:description" content="Portal berita modern dengan berita terkini dan terpercaya">
+    <meta property="og:image" content="https://picsum.photos/seed/og-image/1200/630.jpg">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portal Berita Modern">
+    <meta name="twitter:description" content="Portal berita modern dengan berita terkini dan terpercaya">
+    <meta name="twitter:image" content="https://picsum.photos/seed/twitter-image/1200/630.jpg">
+    
+    <title>VIVA News & Insights - Berita Terkini dan Terpercaya</title>
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        :root {
+            --primary-color: #E32636; /* VIVA Red */
+            --secondary-color: #C41E3A; /* Darker Red */
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --bg-color: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --font-family: 'Inter', sans-serif;
+        }
+        
+        [data-theme="dark"] {
+            --primary-color: #E32636;
+            --secondary-color: #F15A5F;
+            --text-color: #f9fafb;
+            --text-light: #d1d5db;
+            --bg-color: #111827;
+            --bg-secondary: #1f2937;
+            --border-color: #374151;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Navigation Menu - Now at the very top */
+        .nav-section {
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+        
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .nav-item {
+            padding: 1rem 1.5rem;
+            white-space: nowrap;
+            position: relative;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Main Header - Now below navigation with updated layout */
+        .main-header {
+            background-color: var(--bg-color);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            font-size: 1.875rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+        
+        .logo-main {
+            font-size: 2rem;
+            font-weight: 900;
+        }
+        
+        .logo-sub {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        /* Brand Container - Now in the middle of header */
+        .brand-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .brand-logo:hover {
+            color: var(--primary-color);
+        }
+        
+        .brand-logo::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        /* Search Container - Improved design with button inside */
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-input {
+            width: 250px;
+            padding: 0.5rem 3rem 0.5rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            background-color: var(--bg-secondary);
+            color: var(--text-color);
+            font-size: 0.875rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(227, 38, 54, 0.1);
+        }
+        
+        .search-button {
+            position: absolute;
+            right: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .search-button svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Header Actions - Now contains theme toggle and menu toggle */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .theme-toggle:hover {
+            background-color: var(--bg-secondary);
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        
+        /* Hero section styles - Improved with better overlay */
+        .hero {
+            padding: 2rem 0;
+        }
+        
+        .hero-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .hero-main {
+            position: relative;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            height: 400px;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .hero-main:hover .hero-image {
+            transform: scale(1.05);
+        }
+        
+        .hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
+            color: white;
+            z-index: 2;
+        }
+        
+        .hero-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 0.25rem;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+        
+        .hero-title {
+            font-size: 1.875rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+        
+        .hero-excerpt {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        /* Featured Articles - Fixed structure */
+        .featured-articles {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            height: 400px;
+        }
+        
+        .featured-card {
+            position: relative;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+            height: calc(50% - 0.75rem);
+            background-color: var(--bg-secondary);
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .featured-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .featured-card:hover .featured-image {
+            transform: scale(1.05);
+        }
+        
+        .featured-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
+            color: white;
+            z-index: 2;
+        }
+        
+        .featured-category {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.625rem;
+            font-weight: 600;
+            border-radius: 0.25rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .featured-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+        
+        .featured-excerpt {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.9);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Main content layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        
+        /* Article feed styles */
+        .article-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .article-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+            background-color: var(--bg-secondary);
+            position: relative;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .article-content {
+            padding: 1.25rem;
+        }
+        
+        .article-category {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 0.625rem;
+            font-weight: 600;
+            border-radius: 0.25rem;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+        
+        .article-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+        }
+        
+        .article-title:hover {
+            color: var(--primary-color);
+        }
+        
+        .article-excerpt {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .article-meta {
+            display: flex;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+        
+        .article-author {
+            display: flex;
+            align-items: center;
+            margin-right: 1rem;
+        }
+        
+        .author-avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .article-time {
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Sidebar styles - Exact match to ISU TERKINI image */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .sidebar-section {
+            background-color: var(--bg-secondary);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .sidebar-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* ISU TERKINI styling - Exact match to the image */
+        .isu-terkini-list {
+            list-style: none;
+            counter-reset: trending-counter;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .isu-terkini-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0;
+            border: none;
+            background: none;
+        }
+        
+        .isu-terkini-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .isu-terkini-item::before {
+            counter-increment: trending-counter;
+            content: "#" counter(trending-counter);
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-right: 1rem;
+            min-width: 30px;
+            text-align: left;
+            font-family: var(--font-family);
+        }
+        
+        .isu-terkini-title {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.4;
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+            transition: color 0.3s;
+            font-family: var(--font-family);
+        }
+        
+        .isu-terkini-title:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .newsletter-input {
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 0.875rem;
+        }
+        
+        .newsletter-button {
+            padding: 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .category-tag {
+            padding: 0.5rem 0.75rem;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .category-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .ad-slot {
+            width: 100%;
+            height: 250px;
+            background-color: var(--bg-color);
+            border: 1px dashed var(--border-color);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .pagination-list {
+            display: flex;
+            list-style: none;
+        }
+        
+        .pagination-item {
+            margin: 0 0.25rem;
+        }
+        
+        .pagination-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 0.5rem;
+            background-color: var(--bg-secondary);
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .pagination-link:hover, .pagination-link.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Footer styles */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        /* Article page styles */
+        .article-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .article-header {
+            margin-bottom: 2rem;
+        }
+        
+        .article-page-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        
+        .article-page-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+        
+        .article-page-author {
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+        }
+        
+        .article-page-author-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        .article-page-image {
+            width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        
+        .article-page-content {
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+        
+        .article-page-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 2rem 0 1rem;
+            color: var(--text-color);
+        }
+        
+        .article-page-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text-color);
+        }
+        
+        .article-page-content p {
+            margin-bottom: 1.25rem;
+        }
+        
+        .article-page-content blockquote {
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            border-left: 4px solid var(--primary-color);
+            background-color: var(--bg-secondary);
+            font-style: italic;
+        }
+        
+        .article-page-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            margin: 1.5rem 0;
+        }
+        
+        .related-articles {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .related-articles h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .related-card {
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .related-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        
+        .related-content {
+            padding: 1rem;
+        }
+        
+        .related-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-color);
+            text-decoration: none;
+            display: block;
+        }
+        
+        .related-title:hover {
+            color: var(--primary-color);
+        }
+        
+        .comments-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .comments-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form {
+            margin-bottom: 2rem;
+        }
+        
+        .comment-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background-color: var(--bg-secondary);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            font-size: 0.875rem;
+            resize: vertical;
+            min-height: 100px;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-form button {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .comment-form button:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .comments-list {
+            list-style: none;
+        }
+        
+        .comment {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .comment:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+        }
+        
+        .comment-meta {
+            flex-grow: 1;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .comment-time {
+            font-size: 0.75rem;
+            color: var(--text-light);
+        }
+        
+        .comment-content {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        /* Loading spinner */
+        .loading-spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            margin: 2rem auto;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1.5fr 1fr;
+            }
+            
+            .main-content {
+                grid-template-columns: 1.5fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .brand-container {
+                order: 2;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+            
+            .search-container {
+                order: 3;
+                width: 100%;
+            }
+            
+            .search-input {
+                width: 100%;
+            }
+            
+            .header-actions {
+                order: 1;
+                align-self: flex-end;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--bg-color);
+                flex-direction: column;
+                padding: 5rem 1rem 1rem;
+                box-shadow: var(--shadow-lg);
+                transition: left 0.3s;
+                z-index: 200;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                width: 100%;
+                padding: 0.75rem 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-main {
+                height: 250px;
+            }
+            
+            .hero-title {
+                font-size: 1.5rem;
+            }
+            
+            .featured-articles {
+                height: auto;
+                flex-direction: row;
+                overflow-x: auto;
+                scrollbar-width: none;
+            }
+            
+            .featured-articles::-webkit-scrollbar {
+                display: none;
+            }
+            
+            .featured-card {
+                min-width: 280px;
+                height: 180px;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-feed {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .article-page-title {
+                font-size: 1.875rem;
+            }
+            
+            .related-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Header adjustments for mobile */
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0;
+            }
+            
+            /* Hide brand container */
+            .brand-container {
+                display: none;
+            }
+            
+            /* Logo on the left */
+            .logo {
+                order: 1;
+            }
+            
+            .logo-main {
+                font-size: 1.5rem;
+            }
+            
+            .logo-sub {
+                font-size: 0.75rem;
+            }
+            
+            /* Search container adjustments */
+            .search-container {
+                order: 2;
+                position: relative;
+            }
+            
+            /* Hide search input by default */
+            .search-input {
+                position: absolute;
+                top: 0;
+                right: 40px;
+                width: 0;
+                padding: 0;
+                border: none;
+                opacity: 0;
+                transition: width 0.3s, opacity 0.3s, padding 0.3s;
+                z-index: -1;
+            }
+            
+            /* Show search input when active */
+            .search-input.active {
+                width: 200px;
+                padding: 0.5rem 3rem 0.5rem 1rem;
+                border: 1px solid var(--border-color);
+                opacity: 1;
+                z-index: 1;
+            }
+            
+            /* Adjust search button */
+            .search-button {
+                position: relative;
+                right: 0;
+                top: 0;
+                transform: none;
+                z-index: 2;
+            }
+            
+            /* Header actions on the right */
+            .header-actions {
+                order: 3;
+                gap: 0.5rem;
+            }
+            
+            /* Hero section adjustments for mobile */
+            .hero-main {
+                height: 200px;
+            }
+            
+            .hero-title {
+                font-size: 1.25rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+            
+            .hero-excerpt {
+                font-size: 0.875rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            
+            /* Featured articles adjustments for mobile */
+            .featured-articles {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .featured-card {
+                height: 150px;
+                margin-bottom: 1rem;
+            }
+            
+            .featured-title {
+                font-size: 0.875rem;
+                font-weight: 600;
+                margin-bottom: 0.25rem;
+            }
+            
+            .featured-excerpt {
+                font-size: 0.75rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            
+            /* Article card adjustments for mobile - list layout with thumbnail on left */
+            .article-feed {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .article-card {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                border-radius: 0.5rem;
+                overflow: hidden;
+                background-color: var(--bg-secondary);
+                box-shadow: var(--shadow-sm);
+                transition: transform 0.3s;
+            }
+            
+            .article-card:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-md);
+            }
+            
+            .article-image {
+                width: 120px;
+                height: 120px;
+                flex-shrink: 0;
+                object-fit: cover;
+            }
+            
+            /* Make article-category an overlay on bottom left of thumbnail */
+            .article-category {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                z-index: 2;
+                font-size: 0.625rem;
+                padding: 0.25rem 0.5rem;
+            }
+            
+            /* Hide excerpt in mobile view */
+            .article-excerpt {
+                display: none;
+            }
+            
+            /* Adjust article content for mobile */
+            .article-content {
+                padding: 1rem;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            
+            .article-title {
+                font-size: 1rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+                line-height: 1.3;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            
+            .article-meta {
+                font-size: 0.625rem;
+                margin-top: auto;
+            }
+            
+            .article-author {
+                margin-right: 0.75rem;
+            }
+            
+            .author-avatar {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .article-page-title {
+                font-size: 1.5rem;
+            }
+            
+            .article-page-content {
+                font-size: 1rem;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded">Skip to main content</a>
+    
+    <!-- Navigation Menu - Now at the very top -->
+    <nav class="nav-section" id="header">
+        <div class="container">
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link active">NEWS</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">BISNIS</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">SPORT</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">BOLA</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">LIFESTYLE</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">OTOMOTIF</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">VIDEO</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Header - Now below navigation with updated layout -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-container">
+                <!-- Logo on the left -->
+                <a href="#" class="logo" aria-label="VIVA News & Insights">
+                    <div class="logo-text">
+                        <span class="logo-main">VIVA</span>
+                        <span class="logo-sub">News & Insights</span>
+                    </div>
+                </a>
+                
+                <!-- Brand Container in the middle -->
+                <div class="brand-container">
+                    <a href="#" class="brand-logo">VIVA DIGITAL</a>
+                    <a href="#" class="brand-logo">VIVA LIFESTYLE</a>
+                    <a href="#" class="brand-logo">VIVA NETWORK</a>
+                </div>
+                
+                <!-- Search Container and Theme Toggle on the right -->
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="search" class="search-input" placeholder="Masukkan kata...." aria-label="Cari berita">
+                        <button type="submit" class="search-button" aria-label="Cari">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon" style="display: none;">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-container">
+                    <article class="hero-main">
+                        <img src="https://picsum.photos/seed/hero-main/800/400.jpg" alt="Hero article image" class="hero-image">
+                        <div class="hero-content">
+                            <span class="hero-category">Nasional</span>
+                            <h1 id="hero-heading" class="hero-title">Pemerintah Luncurkan Program Digitalisasi untuk UMKM di Seluruh Indonesia</h1>
+                            <p class="hero-excerpt">Program ini bertujuan untuk membantu para pelaku usaha mikro, kecil, dan menengah dalam mengadopsi teknologi digital untuk meningkatkan daya saing mereka di pasar global.</p>
+                        </div>
+                    </article>
+                    
+                    <div class="featured-articles">
+                        <article class="featured-card">
+                            <img src="https://picsum.photos/seed/featured-1/400/200.jpg" alt="Featured article 1" class="featured-image">
+                            <div class="featured-content">
+                                <span class="featured-category">Teknologi</span>
+                                <h2 class="featured-title">Startup Lokal Raih Pendanaan Senilai Rp 500 Miliar</h2>
+                                <p class="featured-excerpt">Perusahaan teknologi asal Indonesia berhasil mendapatkan investasi dari venture capital asing untuk pengembangan produk inovatif.</p>
+                            </div>
+                        </article>
+                        
+                        <article class="featured-card">
+                            <img src="https://picsum.photos/seed/featured-2/400/200.jpg" alt="Featured article 2" class="featured-image">
+                            <div class="featured-content">
+                                <span class="featured-category">Olahraga</span>
+                                <h2 class="featured-title">Atlet Indonesia Raih Medali Emas di Kejuaraan Dunia</h2>
+                                <p class="featured-excerpt">Prestasi membanggakan ditorehkan oleh atlet bulu tangkis Indonesia setelah mengalahkan lawan tangguh di final.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Article Feed and Sidebar -->
+        <div class="container">
+            <div class="main-content">
+                <!-- Article Feed -->
+                <section class="article-feed-section" aria-labelledby="feed-heading">
+                    <h2 id="feed-heading" class="sr-only">Artikel Terkini</h2>
+                    <div class="article-feed" id="article-feed">
+                        <!-- Articles will be dynamically loaded here -->
+                    </div>
+                    
+                    <div class="loading-spinner" id="loading-spinner"></div>
+                    
+                    <div class="pagination">
+                        <ul class="pagination-list">
+                            <li class="pagination-item"><a href="#" class="pagination-link" aria-label="Previous page">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </a></li>
+                            <li class="pagination-item"><a href="#" class="pagination-link active">1</a></li>
+                            <li class="pagination-item"><a href="#" class="pagination-link">2</a></li>
+                            <li class="pagination-item"><a href="#" class="pagination-link">3</a></li>
+                            <li class="pagination-item"><a href="#" class="pagination-link" aria-label="Next page">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a></li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <!-- Sidebar -->
+                <aside class="sidebar" aria-labelledby="sidebar-heading">
+                    <h2 id="sidebar-heading" class="sr-only">Sidebar</h2>
+                    
+                    <!-- ISU TERKINI Section - Exact match to the image -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">ISU TERKINI</h3>
+                        <ol class="isu-terkini-list">
+                            <li class="isu-terkini-item">
+                                <a href="#" class="isu-terkini-title">Onad</a>
+                            </li>
+                            <li class="isu-terkini-item">
+                                <a href="#" class="isu-terkini-title">Onadio Leonardo</a>
+                            </li>
+                            <li class="isu-terkini-item">
+                                <a href="#" class="isu-terkini-title">Prabowo</a>
+                            </li>
+                            <li class="isu-terkini-item">
+                                <a href="#" class="isu-terkini-title">Prabowo Subianto</a>
+                            </li>
+                            <li class="isu-terkini-item">
+                                <a href="#" class="isu-terkini-title">Purbaya</a>
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <!-- Newsletter Section -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Newsletter</h3>
+                        <p class="sidebar-description">Dapatkan berita terkini langsung di inbox Anda</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Email Anda" required>
+                            <button type="submit" class="newsletter-button">Berlangganan</button>
+                        </form>
+                    </div>
+                    
+                    <!-- Categories Section -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Kategori</h3>
+                        <div class="category-list">
+                            <a href="#" class="category-tag">Nasional</a>
+                            <a href="#" class="category-tag">Internasional</a>
+                            <a href="#" class="category-tag">Ekonomi</a>
+                            <a href="#" class="category-tag">Teknologi</a>
+                            <a href="#" class="category-tag">Olahraga</a>
+                            <a href="#" class="category-tag">Hiburan</a>
+                            <a href="#" class="category-tag">Gaya Hidup</a>
+                            <a href="#" class="category-tag">Kesehatan</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Ad Section -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Iklan</h3>
+                        <div class="ad-slot">
+                            <span>300x250 Ad Space</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        
+        <!-- Article Page (Hidden by default, shown when article is clicked) -->
+        <section class="article-page" id="article-page" style="display: none;">
+            <article>
+                <header class="article-header">
+                    <h1 class="article-page-title" id="article-page-title">Judul Artikel</h1>
+                    <div class="article-page-meta">
+                        <div class="article-page-author">
+                            <img src="https://picsum.photos/seed/author/100/100.jpg" alt="Author" class="article-page-author-avatar">
+                            <div>
+                                <div class="article-author-name" id="article-author-name">Nama Penulis</div>
+                                <div class="article-author-role">Editor</div>
+                            </div>
+                        </div>
+                        <div class="article-page-time">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span id="article-date">1 Januari 2023</span>
+                        </div>
+                        <div class="article-reading-time">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            <span id="reading-time">5 menit baca</span>
+                        </div>
+                    </div>
+                </header>
+                
+                <img src="https://picsum.photos/seed/article-image/800/400.jpg" alt="Article image" class="article-page-image" id="article-page-image">
+                
+                <div class="article-page-content" id="article-page-content">
+                    <!-- Article content will be dynamically loaded here -->
+                </div>
+                
+                <section class="related-articles" aria-labelledby="related-heading">
+                    <h2 id="related-heading">Artikel Terkait</h2>
+                    <div class="related-grid" id="related-grid">
+                        <!-- Related articles will be dynamically loaded here -->
+                    </div>
+                </section>
+                
+                <section class="comments-section" aria-labelledby="comments-heading">
+                    <h2 id="comments-heading">Komentar</h2>
+                    
+                    <form class="comment-form">
+                        <textarea placeholder="Tulis komentar Anda..." required></textarea>
+                        <button type="submit">Kirim Komentar</button>
+                    </form>
+                    
+                    <ul class="comments-list" id="comments-list">
+                        <!-- Comments will be dynamically loaded here -->
+                    </ul>
+                </section>
+            </article>
+            
+            <button id="back-to-feed" class="newsletter-button" style="margin-top: 2rem;">Kembali ke Beranda</button>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p>Portal berita modern yang menyajikan informasi terkini dan terpercaya dari berbagai bidang.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kategori</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Nasional</a></li>
+                        <li><a href="#">Internasional</a></li>
+                        <li><a href="#">Ekonomi</a></li>
+                        <li><a href="#">Teknologi</a></li>
+                        <li><a href="#">Olahraga</a></li>
+                        <li><a href="#">Hiburan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Layanan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">RSS Feed</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Aplikasi Mobile</a></li>
+                        <li><a href="#">Berlangganan Cetak</a></li>
+                        <li><a href="#">Arsip</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Redaksi</a></li>
+                        <li><a href="#">Iklan</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">Pedoman Media Siber</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 VIVA News & Insights. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        const htmlElement = document.documentElement;
+        
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-theme', currentTheme);
+        
+        if (currentTheme === 'dark') {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            const theme = htmlElement.getAttribute('data-theme');
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            if (newTheme === 'dark') {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            } else {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            }
+        });
+        
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // Search toggle functionality for mobile
+        const searchButton = document.querySelector('.search-button');
+        const searchInput = document.querySelector('.search-input');
+        
+        searchButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            searchInput.classList.toggle('active');
+            if (searchInput.classList.contains('active')) {
+                searchInput.focus();
+            }
+        });
+        
+        // Close search when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchButton.contains(e.target) && !searchInput.contains(e.target)) {
+                searchInput.classList.remove('active');
+            }
+        });
+        
+        // Sticky header on scroll
+        const header = document.getElementById('header');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.style.boxShadow = 'var(--shadow-md)';
+            } else {
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+        
+        // Load articles from JSON
+        async function loadArticles() {
+            try {
+                const response = await fetch('articles.json');
+                const articles = await response.json();
+                
+                const articleFeed = document.getElementById('article-feed');
+                articleFeed.innerHTML = '';
+                
+                articles.forEach(article => {
+                    const articleCard = createArticleCard(article);
+                    articleFeed.appendChild(articleCard);
+                });
+                
+                // Setup lazy loading for images
+                setupLazyLoading();
+                
+                // Setup infinite scroll
+                setupInfiniteScroll();
+            } catch (error) {
+                console.error('Error loading articles:', error);
+                // Fallback to dummy articles if JSON fails to load
+                loadDummyArticles();
+            }
+        }
+        
+        // Create article card element
+        function createArticleCard(article) {
+            const card = document.createElement('article');
+            card.className = 'article-card';
+            
+            card.innerHTML = `
+                <img src="${article.image}" alt="${article.title}" class="article-image" loading="lazy">
+                <div class="article-content">
+                    <span class="article-category">${article.category}</span>
+                    <a href="#" class="article-title" data-id="${article.id}">${article.title}</a>
+                    <p class="article-excerpt">${article.excerpt}</p>
+                    <div class="article-meta">
+                        <div class="article-author">
+                            <img src="${article.author.avatar}" alt="${article.author.name}" class="author-avatar">
+                            <span>${article.author.name}</span>
+                        </div>
+                        <div class="article-time">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>${article.time}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add click event to article title
+            const titleLink = card.querySelector('.article-title');
+            titleLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                loadArticle(article.id);
+            });
+            
+            return card;
+        }
+        
+        // Load article details
+        async function loadArticle(articleId) {
+            try {
+                const response = await fetch('articles.json');
+                const articles = await response.json();
+                
+                const article = articles.find(a => a.id === articleId);
+                if (!article) return;
+                
+                // Hide main content and show article page
+                document.querySelector('.hero').style.display = 'none';
+                document.querySelector('.main-content').style.display = 'none';
+                document.getElementById('article-page').style.display = 'block';
+                
+                // Populate article page
+                document.getElementById('article-page-title').textContent = article.title;
+                document.getElementById('article-author-name').textContent = article.author.name;
+                document.getElementById('article-date').textContent = article.date;
+                document.getElementById('reading-time').textContent = article.readingTime;
+                document.getElementById('article-page-image').src = article.image;
+                document.getElementById('article-page-image').alt = article.title;
+                document.getElementById('article-page-content').innerHTML = article.content;
+                
+                // Load related articles
+                loadRelatedArticles(articleId, articles);
+                
+                // Load comments
+                loadComments();
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            } catch (error) {
+                console.error('Error loading article:', error);
+            }
+        }
+        
+        // Load related articles
+        function loadRelatedArticles(currentArticleId, allArticles) {
+            const relatedGrid = document.getElementById('related-grid');
+            relatedGrid.innerHTML = '';
+            
+            // Get 3 random articles excluding the current one
+            const relatedArticles = allArticles
+                .filter(a => a.id !== currentArticleId)
+                .sort(() => Math.random() - 0.5)
+                .slice(0, 3);
+            
+            relatedArticles.forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'related-card';
+                
+                card.innerHTML = `
+                    <img src="${article.image}" alt="${article.title}" class="related-image">
+                    <div class="related-content">
+                        <a href="#" class="related-title" data-id="${article.id}">${article.title}</a>
+                    </div>
+                `;
+                
+                const titleLink = card.querySelector('.related-title');
+                titleLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadArticle(article.id);
+                });
+                
+                relatedGrid.appendChild(card);
+            });
+        }
+        
+        // Load comments
+        function loadComments() {
+            const commentsList = document.getElementById('comments-list');
+            commentsList.innerHTML = '';
+            
+            // Dummy comments
+            const comments = [
+                {
+                    id: 1,
+                    author: 'Ahmad Rizki',
+                    avatar: 'https://picsum.photos/seed/user1/100/100.jpg',
+                    time: '2 jam yang lalu',
+                    content: 'Artikel yang sangat informatif dan bermanfaat. Terima kasih sudah berbagi informasi ini.'
+                },
+                {
+                    id: 2,
+                    author: 'Siti Nurhaliza',
+                    avatar: 'https://picsum.photos/seed/user2/100/100.jpg',
+                    time: '5 jam yang lalu',
+                    content: 'Saya setuju dengan pendapat penulis. Ini adalah isu yang penting untuk dibahas lebih lanjut.'
+                },
+                {
+                    id: 3,
+                    author: 'Budi Santoso',
+                    avatar: 'https://picsum.photos/seed/user3/100/100.jpg',
+                    time: '1 hari yang lalu',
+                    content: 'Menurut saya, ada beberapa hal yang perlu ditambahkan dalam artikel ini. Semoga penulis bisa membuat kelanjutan dari topik ini.'
+                }
+            ];
+            
+            comments.forEach(comment => {
+                const commentElement = document.createElement('li');
+                commentElement.className = 'comment';
+                
+                commentElement.innerHTML = `
+                    <div class="comment-header">
+                        <img src="${comment.avatar}" alt="${comment.author}" class="comment-avatar">
+                        <div class="comment-meta">
+                            <div class="comment-author">${comment.author}</div>
+                            <div class="comment-time">${comment.time}</div>
+                        </div>
+                    </div>
+                    <div class="comment-content">${comment.content}</div>
+                `;
+                
+                commentsList.appendChild(commentElement);
+            });
+        }
+        
+        // Back to feed button
+        document.getElementById('back-to-feed').addEventListener('click', () => {
+            document.querySelector('.hero').style.display = 'block';
+            document.querySelector('.main-content').style.display = 'grid';
+            document.getElementById('article-page').style.display = 'none';
+        });
+        
+        // Setup lazy loading for images
+        function setupLazyLoading() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const image = entry.target;
+                            image.src = image.dataset.src || image.src;
+                            image.classList.remove('lazy');
+                            imageObserver.unobserve(image);
+                        }
+                    });
+                });
+                
+                images.forEach(image => {
+                    imageObserver.observe(image);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                images.forEach(image => {
+                    image.src = image.dataset.src || image.src;
+                });
+            }
+        }
+        
+        // Setup infinite scroll
+        function setupInfiniteScroll() {
+            const loadingSpinner = document.getElementById('loading-spinner');
+            let page = 2;
+            let loading = false;
+            
+            window.addEventListener('scroll', () => {
+                if (loading) return;
+                
+                const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+                
+                if (scrollTop + clientHeight >= scrollHeight - 100) {
+                    loading = true;
+                    loadingSpinner.style.display = 'block';
+                    
+                    // Simulate loading more articles
+                    setTimeout(() => {
+                        loadMoreArticles(page);
+                        page++;
+                        loading = false;
+                        loadingSpinner.style.display = 'none';
+                    }, 1000);
+                }
+            });
+        }
+        
+        // Load more articles
+        async function loadMoreArticles(page) {
+            try {
+                const response = await fetch('articles.json');
+                const articles = await response.json();
+                
+                const articleFeed = document.getElementById('article-feed');
+                
+                // Clone articles for infinite scroll demo
+                const clonedArticles = articles.map(article => ({
+                    ...article,
+                    id: `${article.id}-page-${page}`,
+                    title: `${article.title} (Halaman ${page})`
+                }));
+                
+                clonedArticles.forEach(article => {
+                    const articleCard = createArticleCard(article);
+                    articleFeed.appendChild(articleCard);
+                });
+                
+                // Setup lazy loading for new images
+                setupLazyLoading();
+            } catch (error) {
+                console.error('Error loading more articles:', error);
+            }
+        }
+        
+        // Load dummy articles if JSON fails to load
+        function loadDummyArticles() {
+            const dummyArticles = [
+                {
+                    id: 'dummy-1',
+                    title: 'Pemerintah Umumkan Program Vaksinasi Booster Gratis',
+                    excerpt: 'Program vaksinasi booster gratis akan dimulai bulan depan dan ditujukan untuk seluruh warga Indonesia yang telah menerima dua dosis vaksin.',
+                    image: 'https://picsum.photos/seed/dummy1/400/250.jpg',
+                    category: 'Kesehatan',
+                    author: {
+                        name: 'Rina Wijaya',
+                        avatar: 'https://picsum.photos/seed/author1/100/100.jpg'
+                    },
+                    time: '3 jam yang lalu',
+                    date: '15 Juni 2023',
+                    readingTime: '5 menit baca',
+                    content: `
+                        <p>Pemerintah Indonesia secara resmi mengumumkan program vaksinasi booster gratis yang akan dimulai pada bulan depan. Program ini ditujukan untuk seluruh warga Indonesia yang telah menerima dua dosis vaksin COVID-19.</p>
+                        
+                        <h2>Alasan di Balik Program Booster Gratis</h2>
+                        <p>Menteri Kesehatan menjelaskan bahwa program ini diluncurkan untuk meningkatkan kekebalan komunal di tengah masih adanya potensi penyebaran varian baru COVID-19. "Vaksinasi booster sangat penting untuk memperkuat pertahanan tubuh terhadap virus, terutama bagi kelompok rentan seperti lansia dan mereka yang memiliki penyakit bawaan," kata Menteri Kesehatan dalam konferensi pers.</p>
+                        
+                        <blockquote>"Vaksinasi booster sangat penting untuk memperkuat pertahanan tubuh terhadap virus, terutama bagi kelompok rentan seperti lansia dan mereka yang memiliki penyakit bawaan."</blockquote>
+                        
+                        <h3>Tahapan Pelaksanaan</h3>
+                        <p>Program vaksinasi booster akan dilaksanakan dalam beberapa tahap. Tahap pertama akan diprioritaskan untuk tenaga kesehatan, lansia, dan mereka yang memiliki penyakit bawaan. Tahap berikutnya akan mencakup masyarakat umum.</p>
+                        
+                        <img src="https://picsum.photos/seed/vaccine/800/400.jpg" alt="Vaksinasi booster">
+                        
+                        <p>Masyarakat dapat mendaftar melalui aplikasi PeduliLindungi atau datang langsung ke fasilitas kesehatan terdekat yang telah ditunjuk. Vaksin yang digunakan untuk booster adalah mRNA dan protein rekombinan, yang telah terbukti efektif meningkatkan respons imun.</p>
+                        
+                        <p>Para ahli kesehatan menyambut baik program ini dan berharap dapat meningkatkan cakupan vaksinasi di Indonesia. "Ini adalah langkah yang tepat untuk mengendalikan pandemi dan memulihkan ekonomi nasional," kata seorang ahli epidemiologi dari Universitas Indonesia.</p>
+                    `
+                },
+                {
+                    id: 'dummy-2',
+                    title: 'Harga Emas Naik Signifikan Pasca Kenaikan Suku Bunga AS',
+                    excerpt: 'Harga emas di pasar domestik mengalami kenaikan signifikan setelah The Fed mengumumkan kenaikan suku bunga acuan.',
+                    image: 'https://picsum.photos/seed/dummy2/400/250.jpg',
+                    category: 'Ekonomi',
+                    author: {
+                        name: 'Budi Santoso',
+                        avatar: 'https://picsum.photos/seed/author2/100/100.jpg'
+                    },
+                    time: '5 jam yang lalu',
+                    date: '15 Juni 2023',
+                    readingTime: '4 menit baca',
+                    content: `
+                        <p>Harga emas di pasar domestik mengalami kenaikan signifikan setelah The Federal Reserve (The Fed) mengumumkan kenaikan suku bunga acuan. Kenaikan harga emas ini sejalan dengan tren global di mana investor mencari aset safe haven di tengah ketidakpastian ekonomi.</p>
+                        
+                        <h2>Faktor Pendorong Kenaikan Harga Emas</h2>
+                        <p>Menurut analis pasar modal, ada beberapa faktor yang mendorong kenaikan harga emas. Pertama, keputusan The Fed untuk menaikkan suku bunga acuan sebesar 25 basis poin telah meningkatkan ketidakpastian di pasar keuangan global. Kedua, inflasi yang masih tinggi di berbagai negara membuat investor beralih ke emas sebagai lindung nilai.</p>
+                        
+                        <blockquote>"Emas telah lama dianggap sebagai aset safe haven saat pasar mengalami gejolak. Kenaikan suku bunga AS seringkali menjadi pemicu ketidakpastian yang mendorong investor ke emas," kata seorang analis pasar.</blockquote>
+                        
+                        <h3>Dampak bagi Investor Indonesia</h3>
+                        <p>Bagi investor di Indonesia, kenaikan harga emas ini bisa menjadi peluang maupun tantangan. Bagi mereka yang sudah memiliki investasi emas, ini adalah momentum yang baik untuk mempertimbangkan profit taking. Sementara bagi yang ingin mulai berinvestasi, perlu mempertimbangkan timing yang tepat.</p>
+                        
+                        <img src="https://picsum.photos/seed/gold/800/400.jpg" alt="Harga emas naik">
+                        
+                        <p>Para ahli menyarankan investor untuk tidak panik dan tetap berpegang pada strategi investasi jangka panjang. "Volatilitas harga emas dalam jangka pendek adalah hal biasa. Yang penting adalah memiliki alokasi aset yang seimbang dan diversifikasi," kata seorang perencana keuangan.</p>
+                    `
+                },
+                {
+                    id: 'dummy-3',
+                    title: 'Startup Teknologi Lokal Raih Pendanaan Seri B',
+                    excerpt: 'Startup teknologi asal Indonesia berhasil mendapatkan pendanaan seri B senilai Rp 500 miliar dari investor global.',
+                    image: 'https://picsum.photos/seed/dummy3/400/250.jpg',
+                    category: 'Teknologi',
+                    author: {
+                        name: 'Diana Putri',
+                        avatar: 'https://picsum.photos/seed/author3/100/100.jpg'
+                    },
+                    time: '7 jam yang lalu',
+                    date: '15 Juni 2023',
+                    readingTime: '6 menit baca',
+                    content: `
+                        <p>Startup teknologi asal Indonesia berhasil mendapatkan pendanaan seri B senilai Rp 500 miliar dari sekelompok investor global. Pendanaan ini akan digunakan untuk ekspansi pasar dan pengembangan produk baru.</p>
+                        
+                        <h2>Tentang Startup Ini</h2>
+                        <p>Startup yang bergerak di bidang financial technology (fintech) ini telah beroperasi selama tiga tahun dan memiliki lebih dari satu juta pengguna aktif. Mereka menawarkan solusi pinjaman mikro untuk usaha kecil dan menengah (UKM) yang selama ini kesulitan mengakses perbankan tradisional.</p>
+                        
+                        <blockquote>"Kami sangat senang dengan kepercayaan yang diberikan oleh investor. Pendanaan ini akan memungkinkan kami untuk memperluas jangkauan kami ke lebih banyak UKM di seluruh Indonesia," kata CEO startup tersebut.</blockquote>
+                        
+                        <h3>Rencana Ekspansi</h3>
+                        <p>Dengan pendanaan baru ini, startup berencana untuk memperluas layanan mereka ke 50 kota baru di Indonesia dalam dua tahun ke depan. Mereka juga akan mengembangkan produk baru seperti asuransi mikro dan investasi untuk UKM.</p>
+                        
+                        <img src="https://picsum.photos/seed/startup/800/400.jpg" alt="Startup teknologi">
+                        
+                        <p>Para investor yang berpartisipasi dalam putaran pendanaan ini melihat potensi besar di pasar Indonesia. "UKM adalah tulang punggung ekonomi Indonesia, namun banyak yang masih belum terlayani dengan baik oleh sektor keuangan tradisional. Kami percaya startup ini memiliki model bisnis yang tepat untuk mengisi gap tersebut," kata salah satu investor.</p>
+                    `
+                },
+                {
+                    id: 'dummy-4',
+                    title: 'Tim Nasional Indonesia Lolos ke Putaran Final Piala Asia',
+                    excerpt: 'Tim nasional sepak bola Indonesia berhasil lolos ke putaran final Piala Asia setelah mengalahkan lawan tangguh di pertandingan penentuan.',
+                    image: 'https://picsum.photos/seed/dummy4/400/250.jpg',
+                    category: 'Olahraga',
+                    author: {
+                        name: 'Rizki Ahmad',
+                        avatar: 'https://picsum.photos/seed/author4/100/100.jpg'
+                    },
+                    time: '1 hari yang lalu',
+                    date: '14 Juni 2023',
+                    readingTime: '3 menit baca',
+                    content: `
+                        <p>Tim nasional sepak bola Indonesia berhasil lolos ke putaran final Piala Asia setelah mengalahkan lawan tangguh di pertandingan penentuan. Kemenangan ini menjadi sejarah baru bagi persepakbolaan Indonesia setelah absen selama 16 tahun dari turnamen tersebut.</p>
+                        
+                        <h2>Jalannya Pertandingan</h2>
+                        <p>Pertandingan yang berlangsung di Stadion Utama Gelora Bung Karno ini berjalan sangat sengit. Indonesia berhasil mencetak gol pertama di menit ke-35 melalui sundulan striker andalan mereka. Lawan berhasil menyamakan kedudukan di menit ke-70, namun Indonesia kembali unggul melalui gol spektakuler di menit ke-85.</p>
+                        
+                        <blockquote>"Ini adalah kemenangan untuk seluruh rakyat Indonesia. Kami berterima kasih atas dukungan luar biasa dari para suporter yang hadir di stadion dan yang menyaksikan dari rumah," kata kapten tim nasional dalam wawancara pasca pertandingan.</blockquote>
+                        
+                        <h3>Persiapan Menghadapi Putaran Final</h3>
+                        <p>Pelatih tim nasional mengatakan bahwa tim akan terus berlatih keras untuk menghadapi putaran final Piala Asia yang akan digelar tahun depan. "Kami akan melakukan evaluasi dan perbaikan di beberapa area. Target kami adalah bisa lolos dari fase grup dan membuat bangga bangsa," katanya.</p>
+                        
+                        <img src="https://picsum.photos/seed/football/800/400.jpg" alt="Tim nasional Indonesia">
+                        
+                        <p>Kemenangan ini juga disambut gembira oleh Presiden Indonesia yang memberikan apresiasi kepada para pemain dan ofisial tim. "Ini adalah prestasi yang membanggakan. Pemerintah akan terus mendukung pengembangan sepak bola di Indonesia dari tingkat usia dini hingga profesional," kata Presiden dalam akun media sosialnya.</p>
+                    `
+                },
+                {
+                    id: 'dummy-5',
+                    title: 'Festival Film Indonesia Raih Penghargaan Internasional',
+                    excerpt: 'Film Indonesia berhasil meraih penghargaan di festival film internasional bergengsi, membawa nama harum bangsa di kancah perfilman dunia.',
+                    image: 'https://picsum.photos/seed/dummy5/400/250.jpg',
+                    category: 'Hiburan',
+                    author: {
+                        name: 'Maya Sari',
+                        avatar: 'https://picsum.photos/seed/author5/100/100.jpg'
+                    },
+                    time: '2 hari yang lalu',
+                    date: '13 Juni 2023',
+                    readingTime: '5 menit baca',
+                    content: `
+                        <p>Film Indonesia berhasil meraih penghargaan di festival film internasional bergengsi, membawa nama harum bangsa di kancah perfilman dunia. Film ini berhasil memenangkan kategori "Best Narrative Feature" di festival film yang diadakan di Eropa.</p>
+                        
+                        <h2>Tentang Film Ini</h2>
+                        <p>Film yang disutradarai oleh sutradara muda berbakat ini mengangkat tema tentang keberagaman budaya di Indonesia. Dengan visual yang memukau dan cerita yang kuat, film ini berhasil memukau juri dan penonton internasional.</p>
+                        
+                        <blockquote>"Kami sangat terhormat bisa menerima penghargaan ini. Ini adalah bukti bahwa perfilman Indonesia memiliki kualitas yang bisa bersaing di level internasional," kata sutradara dalam sambutannya di atas panggung.</blockquote>
+                        
+                        <h3>Dampak bagi Perfilman Indonesia</h3>
+                        <p>Penghargaan ini diharapkan dapat memberikan dampak positif bagi industri perfilman Indonesia. "Ini akan membuka pintu bagi film-film Indonesia lainnya untuk bisa diputar di festival internasional dan mendapatkan distribusi global," kata seorang kritikus film.</p>
+                        
+                        <img src="https://picsum.photos/seed/film/800/400.jpg" alt="Festival film">
+                        
+                        <p>Menteri Pariwisata dan Ekonomi Kreatif juga menyampaikan selamat kepada tim produksi film. "Ini adalah prestasi luar biasa yang menunjukkan kreativitas dan bakat anak bangsa. Pemerintah akan terus mendukung industri kreatif Indonesia untuk bisa go international," katanya.</p>
+                    `
+                }
+            ];
+            
+            const articleFeed = document.getElementById('article-feed');
+            articleFeed.innerHTML = '';
+            
+            dummyArticles.forEach(article => {
+                const articleCard = createArticleCard(article);
+                articleFeed.appendChild(articleCard);
+            });
+            
+            // Setup lazy loading for images
+            setupLazyLoading();
+            
+            // Setup infinite scroll
+            setupInfiniteScroll();
+        }
+        
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            loadArticles();
+        });
+    </script>
+</body>
+</html>
